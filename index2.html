@@ -1,0 +1,47 @@
+<div style="font-family: sans-serif; padding: 10px; border: 1px solid #007bff; border-radius: 8px;">
+  <label style="font-weight:bold;">🔑 Buat Kode Unik Kelompok (Bebas/Ingat Baik-baik):</label><br>
+  <input type="text" id="kode" placeholder="Contoh: KLP1MASA" style="width:90%; padding:6px; margin-bottom:8px;"><br>
+
+  <label style="font-weight:bold;">👥 Nama Kelompok:</label><br>
+  <input type="text" id="nama" placeholder="Contoh: Kelompok 1" style="width:90%; padding:6px; margin-bottom:8px;"><br>
+
+  <label style="font-weight:bold;">📝 Anggota:</label><br>
+  <textarea id="anggota" placeholder="Nama anggota..." style="width:90%; height:40px; margin-bottom:8px;"></textarea><br>
+
+  <label style="font-weight:bold;">🏫 Kelas:</label><br>
+  <input type="text" id="kelas" placeholder="Contoh: XI KIMIA 1" style="width:90%; padding:6px;"><br>
+
+  <button onclick="simpanIdentitas()" style="background:#007bff; color:white; border:none; padding:8px 12px; margin-top:8px; border-radius:4px; font-weight:bold; cursor:pointer;">
+    💾 Simpan & Dapatkan Kode
+  </button>
+  <div id="st" style="font-size:11px; margin-top:4px; font-weight:bold;"></div>
+</div>
+
+<script>
+  const URL_APP = 'https://script.google.com/macros/s/AKfycbyaWahkyy7-3JQw3f0DgBie6_Cfd14AGeBOCOyjLNVBWIDrqQp9m55psU4rFZKOu1w8cw/exec';
+
+  function simpanIdentitas() {
+    const kode = document.getElementById('kode').value.trim();
+    const nama = document.getElementById('nama').value.trim();
+    const st = document.getElementById('st');
+
+    if(!kode || !nama) { st.innerText = "⚠️ Kode & Nama Kelompok wajib diisi!"; st.style.color="red"; return; }
+
+    st.innerText = "⏳ Menyimpan..."; st.style.color="#007bff";
+
+    fetch(URL_APP, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        kode: kode,
+        nama: nama,
+        anggota: document.getElementById('anggota').value.trim(),
+        kelas: document.getElementById('kelas').value.trim()
+      })
+    }).then(() => {
+      st.innerText = "✅ Berhasil! Ingat Kode Kelompokmu: " + kode;
+      st.style.color = "green";
+    });
+  }
+</script>
