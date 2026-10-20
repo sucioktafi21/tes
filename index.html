@@ -1,0 +1,213 @@
+<div style="
+  font-family: 'Segoe UI', Arial, sans-serif;
+  max-width: 480px;
+  margin: 12px auto;
+  padding: 24px;
+  background: linear-gradient(145deg, #ffffff, #f0f7ff);
+  border: 1px solid #d5e7ff;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(35, 100, 180, 0.12);
+  color: #19365b;
+  box-sizing: border-box;
+">
+
+  <!-- HEADER -->
+  <div style="
+    background: linear-gradient(135deg, #1769c2, #63a7f5);
+    padding: 20px 18px;
+    border-radius: 15px;
+    margin-bottom: 24px;
+    color: white;
+    text-align: center;
+  ">
+    <div style="font-size: 30px; margin-bottom: 6px;">🧪</div>
+    <div style="font-size: 20px; font-weight: 800; letter-spacing: 0.5px;">
+      IDENTITAS KELOMPOK
+    </div>
+    <div style="font-size: 12px; margin-top: 6px; opacity: 0.95;">
+      E-LKPD Interaktif · Kesetimbangan Kimia
+    </div>
+  </div>
+
+  <!-- KODE KELOMPOK -->
+  <div style="margin-bottom: 18px;">
+    <label for="kode" style="
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #234d7d;
+    ">
+      🔑 Kode Kelompok
+    </label>
+
+    <select id="kode" required style="
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #bfd8f6;
+      border-radius: 10px;
+      background: #ffffff;
+      color: #234d7d;
+      font-size: 14px;
+      font-weight: 600;
+      outline-color: #438fe5;
+      box-sizing: border-box;
+    ">
+      <option value="">Pilih kelompokmu</option>
+      <option value="KLP01">KLP01 — Kelompok 1</option>
+      <option value="KLP02">KLP02 — Kelompok 2</option>
+      <option value="KLP03">KLP03 — Kelompok 3</option>
+      <option value="KLP04">KLP04 — Kelompok 4</option>
+      <option value="KLP05">KLP05 — Kelompok 5</option>
+      <option value="KLP06">KLP06 — Kelompok 6</option>
+      <option value="KLP07">KLP07 — Kelompok 7</option>
+      <option value="KLP08">KLP08 — Kelompok 8</option>
+      <option value="KLP09">KLP09 — Kelompok 9</option>
+      <option value="KLP10">KLP10 — Kelompok 10</option>
+    </select>
+  </div>
+
+  <!-- NAMA ANGGOTA -->
+  <div style="margin-bottom: 18px;">
+    <label for="anggota" style="
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #234d7d;
+    ">
+      👥 Nama Anggota Kelompok
+    </label>
+
+    <textarea id="anggota" required
+      placeholder="Tuliskan nama seluruh anggota kelompok...&#10;1. Nama anggota 1&#10;2. Nama anggota 2&#10;3. Nama anggota 3"
+      style="
+        width: 100%;
+        height: 105px;
+        padding: 12px;
+        border: 1px solid #bfd8f6;
+        border-radius: 10px;
+        background: #ffffff;
+        color: #19365b;
+        font-family: inherit;
+        font-size: 13px;
+        line-height: 1.7;
+        resize: vertical;
+        box-sizing: border-box;
+        outline-color: #438fe5;
+      "
+    ></textarea>
+    <div style="font-size: 11px; color: #7189a7; margin-top: 6px;">
+      💡 Masukkan nama setiap anggota pada baris terpisah.
+    </div>
+  </div>
+
+  <!-- KELAS -->
+  <div style="margin-bottom: 22px;">
+    <label for="kelas" style="
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #234d7d;
+    ">
+      🏫 Kelas
+    </label>
+
+    <input type="text" id="kelas" required
+      placeholder="Contoh: XI. 3.1"
+      style="
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #bfd8f6;
+        border-radius: 10px;
+        background: #ffffff;
+        color: #19365b;
+        font-family: inherit;
+        font-size: 14px;
+        box-sizing: border-box;
+        outline-color: #438fe5;
+      "
+    >
+  </div>
+
+  <!-- TOMBOL SIMPAN -->
+  <button type="button" onclick="simpanIdentitas()" style="
+    width: 100%;
+    padding: 14px 16px;
+    border: none;
+    border-radius: 11px;
+    background: linear-gradient(135deg, #1769c2, #3989e8);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: inherit;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(23, 105, 194, 0.22);
+  ">
+    💾 Simpan Identitas Kelompok
+  </button>
+
+  <div id="st" role="status" aria-live="polite" style="
+    font-size: 12px;
+    margin-top: 12px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.6;
+  "></div>
+
+  <!-- FOOTER -->
+  <div style="
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 14px;
+    border-top: 1px solid #dceafa;
+    font-size: 11px;
+    color: #7189a7;
+  ">
+    ✦ Isi identitas dengan benar sebelum memulai aktivitas ✦
+  </div>
+
+</div>
+
+<!-- SCRIPT UNTUK MEMANGGUL GOOGLE APPS SCRIPT -->
+<script>
+  // Tempelkan URL Web App Google Apps Script (/exec) kamu di bawah ini
+  const URL_WEB_APP = "https://script.google.com/macros/s/AKfycbza-5CEhTj1epa5m2_uGkRK4FFiXDJdG-9D4AmzgObzoRwn1x2BhmvhLLeZZvPmbyc0Sg/exec";
+
+  function simpanIdentitas() {
+    const kode = document.getElementById("kode").value.trim();
+    const anggota = document.getElementById("anggota").value.trim();
+    const kelas = document.getElementById("kelas").value.trim();
+    const st = document.getElementById("st");
+
+    if (!kode || !anggota || !kelas) {
+      st.innerText = "⚠️ Mohon lengkapi semua kolom terlebih dahulu!";
+      st.style.color = "#d9534f";
+      return;
+    }
+
+    st.innerText = "⏳ Sedang menyimpan identitas kelompok...";
+    st.style.color = "#1769c2";
+
+    fetch(URL_WEB_APP, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        kode: kode,
+        anggota: anggota,
+        kelas: kelas
+      })
+    })
+    .then(() => {
+      st.innerText = "✅ Identitas " + kode + " berhasil disimpan ke Google Sheets!";
+      st.style.color = "#28a745";
+    })
+    .catch(error => {
+      st.innerText = "❌ Gagal mengirim data. Silakan coba lagi.";
+      st.style.color = "#d9534f";
+    });
+  }
+</script>
